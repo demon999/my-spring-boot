@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '2.0.3.RELEASE'
+		springBootVersion = '2.0.4.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -11,13 +11,22 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
+apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.example'
-version = '0.0.1-SNAPSHOT'
+version = '1.0.0'
 sourceCompatibility = 1.8
+
+jar {
+    baseName = 'my-spring-boot'
+    version = '1.0.0'
+    manifest {
+        attributes "Manifest-Version": 1.0,
+                'Main-Class': 'com.example.myspringboot.MySpringBootApplication'
+    }
+}
 
 repositories {
 	mavenCentral()
