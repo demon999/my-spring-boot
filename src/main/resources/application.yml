@@ -8,5 +8,33 @@ spring:
     url: jdbc:mysql://localhost:3306/test?autoReconnect=true&failOverReadOnly=false&maxReconnects=3&useUnicode=true&characterEncoding=utf8
     username: root
     password: 123456
+#    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    filters: stat,wall,log4j
+    logSlowSql: true
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/test
+      database: test
+      # uri: mongodb://root:123456@localhost:27017/test
 my:
   aaa: aaa
+mybatis:
+  type-aliases-package: com.example.bootdemo.entity
+  mapper-locations: classpath:mappers/**.xml
+  configuration:
+    cache-enabled: true
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
