@@ -12,7 +12,7 @@ public class ControllerAdviceHandler {
     @ExceptionHandler(Exception.class)
     public Map handleException(Exception e) {
         e.printStackTrace();
-        return new HashMap<String, String>() {{ put("a" , "");}};
+        return new HashMap<String, String>(9) {{ put("a" , ""); put("b" , "");}};
     }
 
 }

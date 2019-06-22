@@ -13,13 +13,13 @@ import javax.sql.DataSource;
 @Configuration
 @MapperScan(basePackages = "com.example.myspringboot.repository")
 public class DataSourceConfiguration {
-    @Value("${jdbc.driverClassName}")
+    @Value("${spring.datasource.driverClassName}")
     private String driverClassName;
-    @Value("${jdbc.url}")
+    @Value("${spring.datasource.url}")
     private String url;
-    @Value("${jdbc.username}")
+    @Value("${spring.datasource.username}")
     private String username;
-    @Value("${jdbc.password}")
+    @Value("${spring.datasource.password}")
     private String password;
 
     @Bean
