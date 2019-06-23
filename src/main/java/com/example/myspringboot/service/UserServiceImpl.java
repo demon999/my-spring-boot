@@ -1,7 +1,7 @@
 package com.example.myspringboot.service;
 
 import com.example.myspringboot.entity.User;
-import com.example.myspringboot.repository.UserMapper;
+import com.example.myspringboot.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

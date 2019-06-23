@@ -1,7 +1,7 @@
-package com.example.myspringboot.app;
+package com.example.myspringboot.config;
 
 import com.example.myspringboot.entity.User;
-import com.example.myspringboot.repository.UserMapper;
+import com.example.myspringboot.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
