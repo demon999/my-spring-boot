@@ -1,6 +1,7 @@
 package com.example.myspringboot.controller;
 
 import com.example.myspringboot.mapper.UserMapper;
+import com.example.myspringboot.service.UserService;
 import org.mongodb.morphia.Datastore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -14,15 +15,14 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/demo")
 public class DemoController {
-
     @Autowired
     private MongoTemplate mongoTemplate;
-
     @Autowired
     private Datastore datastore;
-
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/aa")
     public void aa() {
@@ -37,6 +37,8 @@ public class DemoController {
         datastore.save(userInfo);
 
         System.out.println(">>>>>" + userMapper.countAll());
+
+        userService.saveUser("sssss");
     }
 
 }

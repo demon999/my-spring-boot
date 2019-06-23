@@ -3,10 +3,11 @@ package com.example.myspringboot.mapper;
 import com.example.myspringboot.common.BaseMapper;
 import com.example.myspringboot.entity.User;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Mapper
+@Repository
 public interface UserMapper extends BaseMapper<User> {
 
     @Select("select * from users where name = #{name}")
