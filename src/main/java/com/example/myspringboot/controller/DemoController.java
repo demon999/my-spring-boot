@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.Random;
 import java.util.UUID;
 
@@ -25,7 +26,7 @@ public class DemoController {
     private UserService userService;
 
     @GetMapping("/aa")
-    public void aa() {
+    public HashMap<String, Object> aa() {
         com.example.bootdemo.mongo.UserEntity userEntity = new com.example.bootdemo.mongo.UserEntity();
         userEntity.setId(new Random().nextLong());
         userEntity.setUserName(UUID.randomUUID().toString());
@@ -38,7 +39,8 @@ public class DemoController {
 
         System.out.println(">>>>>" + userMapper.countAll());
 
-        userService.saveUser("sssss");
+//        userService.saveUser("sssss");
+        return new HashMap<String, Object>(1) {{put("msg", "success");}};
     }
 
 }
