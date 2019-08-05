@@ -1,4 +1,4 @@
-package com.example.myspringboot.web;
+package com.example.myspringboot.controller;
 
 import com.example.myspringboot.entity.User;
 import com.example.myspringboot.mapper.UserMapper;

@@ -33,7 +33,7 @@ spring:
 my:
   aaa: aaa
 mybatis:
-  type-aliases-package: com.example.bootdemo.entity
+  type-aliases-package: com.example.myspringboot.entity
   mapper-locations: classpath:mappers/**.xml
   configuration:
     cache-enabled: true
@@ -43,4 +43,4 @@ pagehelper:
   support-methods-arguments: true
   params: count=countSql
 logging:
-  config: classpath:logs/logback-spring.xml
+  config: classpath:config/logback-spring.xml
