@@ -30,10 +30,11 @@ spring:
       uri: mongodb://localhost:27017/test
       database: test
       # uri: mongodb://root:123456@localhost:27017/test
+  shardingsphere:
 my:
   aaa: aaa
 mybatis:
-  type-aliases-package: com.example.myspringboot.entity
+  type-aliases-package: com.example.boot.entity
   mapper-locations: classpath:mappers/**.xml
   configuration:
     cache-enabled: true
