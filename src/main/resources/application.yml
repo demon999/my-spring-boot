@@ -1,5 +1,5 @@
 server:
-  port: 8888
+  port: 9999
   tomcat:
     max-threads: 200
     max-connections: 10000
@@ -24,13 +24,15 @@ spring:
       testWhileIdle: true
       testOnBorrow: false
       testOnReturn: false
-#      filters: stat,wall,log4j
+    hikari:
+      auto-commit: true
+      connection-timeout: 1000
   data:
     mongodb:
       uri: mongodb://localhost:27017/test
       database: test
       # uri: mongodb://root:123456@localhost:27017/test
-  shardingsphere:
+#  shardingsphere:
 my:
   aaa: aaa
 mybatis:
@@ -45,3 +47,7 @@ pagehelper:
   params: count=countSql
 logging:
   config: classpath:config/logback-spring.xml
+#mybatis-plus:
+#  config-location: classpath:config/config.xml
+#  configuration:
+#    interceptors:
