@@ -33,6 +33,50 @@ spring:
       database: test
       # uri: mongodb://root:123456@localhost:27017/test
 #  shardingsphere:
+#    datasource:
+#      names: ds0, ds1
+#      ds0:
+#        type: org.apache.commons.dbcp2.BasicDataSource
+#        driver-class-name: com.mysql.jdbc.Driver
+#        url: jdbc:mysql://localhost:3306/ds0?autoReconnect=true&useSSL=false&failOverReadOnly=false&maxReconnects=3&useUnicode=true&characterEncoding=utf8
+#        username: root
+#        password: 123456
+#        hikari:
+#          jdbc-url: jdbc:mysql://localhost:3306/ds0?autoReconnect=true&useSSL=false&failOverReadOnly=false&maxReconnects=3&useUnicode=true&characterEncoding=utf8
+#          auto-commit: true
+#          connection-timeout: 30000
+#          idle-timeout: 30000
+#          pool-name: ds0
+#      ds1:
+#        type: org.apache.commons.dbcp2.BasicDataSource
+#        driver-class-name: com.mysql.jdbc.Driver
+#        url: jdbc:mysql://localhost:3306/ds1?autoReconnect=true&useSSL=false&failOverReadOnly=false&maxReconnects=3&useUnicode=true&characterEncoding=utf8
+#        username: root
+#        password: 123456
+#        hikari:
+#          jdbc-url: jdbc:mysql://localhost:3306/ds1?autoReconnect=true&useSSL=false&failOverReadOnly=false&maxReconnects=3&useUnicode=true&characterEncoding=utf8
+#          auto-commit: true
+#          connection-timeout: 30000
+#          idle-timeout: 30000
+#          pool-name: ds1
+#    sharding:
+#      default-database-strategy:
+#        inline:
+#          sharding-column: user_id
+#          algorithm-expression: ds$->{user_id % 2}
+#      tables:
+#        t_order:
+#          actual-data-nodes: ds$->{0..1}.t_order$->{0..1}
+#          table-strategy:
+#            inline:
+#              sharding-column: order_id
+#              algorithm-expression: t_order$->{order_id % 2}
+#        t_order_item:
+#          actual-data-nodes: ds$->{0..1}.t_order_item$->{0..1}
+#          table-strategy:
+#            inline:
+#              sharding-column: order_id
+#              algorithm-expression: t_order_item$->{order_id % 2}
 my:
   aaa: aaa
 mybatis:
@@ -47,7 +91,7 @@ pagehelper:
   params: count=countSql
 logging:
   config: classpath:config/logback-spring.xml
-#mybatis-plus:
-#  config-location: classpath:config/config.xml
-#  configuration:
-#    interceptors:
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

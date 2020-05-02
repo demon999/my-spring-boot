@@ -10,7 +10,6 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @EnableConfigurationProperties
 @ServletComponentScan(basePackages = {"com.example.boot.common"})
 @SpringBootApplication(scanBasePackages = {"com.example.boot"})
-@MapperScan("com.example.boot.mapper")
 @EnableAspectJAutoProxy
 public class MySpringBootApplication {
 
