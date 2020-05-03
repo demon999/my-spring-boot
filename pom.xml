@@ -264,11 +264,11 @@
 			<version>4.5.12</version>
 		</dependency>
 
-		<dependency>
+		<!--<dependency>
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-spring-boot-starter</artifactId>
 			<version>7.1.0.M2</version>
-		</dependency>
+		</dependency>-->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>

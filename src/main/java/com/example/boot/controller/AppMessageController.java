@@ -2,6 +2,8 @@ package com.example.boot.controller;
 
 import com.example.boot.entity.AppMessage;
 import com.example.boot.service.AppMessageService;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,13 +16,13 @@ public class AppMessageController {
     @Autowired
     private AppMessageService appMessageService;
 
-    @RequestMapping("/getThree")
+    @GetMapping("/getThree")
     public List<AppMessage> getThreeForMessage() {
         List<AppMessage> list = appMessageService.getMessage();
         return list;
     }
 
-    @RequestMapping("/getAll")
+    @GetMapping("/getAll")
     public List<AppMessage> getAllMessage() {
 
         List<AppMessage> list = appMessageService.getAllMessage();
@@ -33,7 +35,7 @@ public class AppMessageController {
         return list;
     }
 
-    @RequestMapping("/getByID")
+    @GetMapping("/getByID")
     public List<AppMessage> getMessageById(@RequestParam("id") String id) {
         List<AppMessage> list = appMessageService.getMessageById(id);
         int num = list.size();
@@ -45,12 +47,12 @@ public class AppMessageController {
         return list;
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @PostMapping(value = "/add")
     public int addMessage(@RequestBody AppMessage appMessage) {
         return appMessageService.addMessage(appMessage);
     }
 
-    @RequestMapping(value = "/delMessageById", method = RequestMethod.POST)
+    @PostMapping(value = "/delMessageById")
     public int delMessageById(@RequestParam("id") String id) {
         return appMessageService.delMessage(id);
     }

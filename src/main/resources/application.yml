@@ -97,7 +97,7 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 springdoc:
   packages-to-scan: com.example.boot.controller
-#  paths-to-match: /**
+  paths-to-match: /**
   swagger-ui:
     enabled: true
     path: /swagger-ui.html
