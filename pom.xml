@@ -243,7 +243,7 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.59</version>
 		</dependency>
-		<dependency>
+		<!--<dependency>
 			<groupId>org.elasticsearch</groupId>
 			<artifactId>elasticsearch</artifactId>
 		</dependency>
@@ -256,6 +256,12 @@
 			<groupId>org.elasticsearch.client</groupId>
 			<artifactId>elasticsearch-rest-high-level-client</artifactId>
 			<version>6.4.2</version>
+		</dependency>-->
+
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.12</version>
 		</dependency>
 
 		<dependency>
@@ -289,22 +295,33 @@
 			<artifactId>dynamic-datasource-spring-boot-starter</artifactId>
 			<version>2.5.7</version>
 		</dependency>
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>easyexcel</artifactId>
-      <version>2.1.4</version>
-    </dependency>
+        <dependency>
+          <groupId>com.alibaba</groupId>
+          <artifactId>easyexcel</artifactId>
+          <version>2.1.4</version>
+        </dependency>
 
-    <dependency>
-      <groupId>org.apache.shardingsphere</groupId>
-      <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
-      <version>4.0.0-RC3</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-dbcp2</artifactId>
-      <version>2.7.0</version>
-    </dependency>
+        <!--<dependency>
+          <groupId>org.apache.shardingsphere</groupId>
+          <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+          <version>4.0.0-RC3</version>
+        </dependency>-->
+        <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-dbcp2</artifactId>
+          <version>2.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.3.7</version>
+        </dependency>
+		<!--<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-webflux-ui</artifactId>
+			<version>1.3.7</version>
+		</dependency>-->
 	</dependencies>
 
 	<dependencyManagement>
